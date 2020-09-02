@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
+import '../style/Header.css'
+
 import Logo from '../logo-symbol.svg'
 
 function Header() {
@@ -54,7 +56,7 @@ function Header() {
                     </Link>
                     <div style={rightSide}>
                         <Link to='/my-profile' style={buttons}>
-                            <li>My Profile</li>
+                            <input/>
                         </Link>
                     </div>
                 </ul>
