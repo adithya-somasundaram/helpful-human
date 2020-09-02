@@ -1,28 +1,31 @@
-html, body {
-    /* background-color: black */
-}
-
 ul {
     list-style: none;
     margin: 0;
     padding: 0;
-  }
-  
-  a {
-    color: var(--text-color);
-    text-decoration: none;
-  }
-  
-  .navbar{
+}
+
+.header-out{
     height: 78px;
-    background-color: #718185;
+    background-color: #2c3233;
     padding: 0 1rem;
     border-bottom: var(--border);
     align-items: flex-end;
-  }
-  
-  .navbar-nav {
+}
+
+.header-in {
     max-width: 100%;
     height: 100%;
     display: flex;
-  }
+}
+
+.right {
+    margin-right: 10px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.icon {
+    padding: 10px;
+    margin-top: 2px
+}

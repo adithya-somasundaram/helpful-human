@@ -6,12 +6,16 @@ import './App.css';
 
 
 import Header from './components/Header'
+import Sidebar from './components/Sidebar'
+import ListView from './components/ListView'
 
 function App() {
   return (
     <div>
       <Router>
         <Header/>
+        <Sidebar/>
+        <Route exact path="/" component={ListView}/>
       </Router>
     </div>
   );
