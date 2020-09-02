@@ -11,8 +11,8 @@ function Header() {
     const rightSide = {
         marginRight: '0px',
         marginLeft: 'auto',
-        marginTop: 'auto',
-        marginBottom: '0px'
+        marginTop: '20px',
+        marginBottom: 'auto'
     };
 
     // navbar button style
@@ -52,7 +52,7 @@ function Header() {
         <nav className="navbar">
             <ul className="navbar-nav">
                     <Link to='/' style={homeButton}>
-                        <li>{Logo}</li>
+                        <img src={Logo}/>
                     </Link>
                     <div style={rightSide}>
                         <Link to='/my-profile' style={buttons}>
