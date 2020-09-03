@@ -4,8 +4,6 @@ import * as colors from '../db.json'
 
 import '../style/ListView.css'
 
-import DetailView from './DetailView'
-
 class ListView extends Component {
     constructor(props) {
         super(props)
@@ -15,6 +13,10 @@ class ListView extends Component {
             current: 0,
             pages: [],
             color_objs: [[]],
+            test: {
+                outline:'none',
+                border:'none'
+            }
         }
     }
 
@@ -22,7 +24,7 @@ class ListView extends Component {
         var temp = []
         var temp2 = []
         colors.data.map((block) => {
-            temp.push(<button onClick={() => {
+            temp.push(<button style={this.state.test} onClick={() => {
                 this.setState({
                     current: block.id - 1
                 })
@@ -47,8 +49,9 @@ class ListView extends Component {
         return (
             <div className="page">
                 {this.state.color_objs[this.state.current]}
-                <br />
-                {this.state.pages}
+                <div className="bottom-bar">
+                    {this.state.pages}
+                </div>
             </div>
         )
     }
