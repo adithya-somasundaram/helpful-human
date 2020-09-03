@@ -32,8 +32,24 @@ class ListView extends Component {
             }>{block.id}</button>)
             var temp3 = []
             block.colors.map((current) => {
+                var cur = {
+                    backgroundColor : current,
+                    // border : 'none',
+                    position : 'relative'
+                }
+                var t = {
+                    backgroundColor : 'white',
+                    position : 'absolute',
+                    width : '14.5vw',
+                    height : '2.3vw',
+                    marginTop : '5vw',
+                    marginLeft : '-7.26vw'
+                }
                 temp3.push(<Link to={{ pathname: "/detail-view", state:{color:current} }}>
-                    <button className="color-button">{current}</button>
+                    <button style={cur} className="color-button">
+                        <span style={t}>{current}</span>
+                        
+                    </button>
                 </Link>)
             })
             temp2.push(temp3)
