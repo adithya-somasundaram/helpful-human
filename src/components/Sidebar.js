@@ -9,27 +9,27 @@ function Sidebar() {
             <button className="rand-button">Random Color</button>
             <br/>
             <br/>
-            <Link className="color-link" to='/detailed-view'>
+            <Link className="color-link" to='/detail-view'>
                 Red
             </Link>
             <br/>
-            <Link to='/detailed-view'>
+            <Link className="color-link" to='/detail-view'>
                 Orange
             </Link>
             <br/>
-            <Link to='/detailed-view'>
+            <Link className="color-link" to='/detail-view'>
                 Yellow
             </Link>
             <br/>
-            <Link to='/detailed-view'>
+            <Link className="color-link" to='/detail-view'>
                 Green
             </Link>
             <br/>
-            <Link to='/detailed-view'>
+            <Link className="color-link" to='/detail-view'>
                 Blue
             </Link>
             <br/>
-            <Link to='/detailed-view'>
+            <Link className="color-link" to='/detail-view'>
                 Purple
             </Link>
         </div>

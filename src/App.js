@@ -8,6 +8,7 @@ import './App.css';
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import ListView from './components/ListView'
+import DetailView from './components/DetailView'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Header/>
         <Sidebar/>
         <Route exact path="/" component={ListView}/>
+        <Route exact path="/detail-view" component={DetailView}/>
       </Router>
     </div>
   );

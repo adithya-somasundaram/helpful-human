@@ -2,3 +2,10 @@
     position : absolute;
     padding-left: 30%;
 }
+
+.color-button {
+    width: 15vw;
+    height: 15vw;
+    margin-left: 3%;
+    margin-top : 3%;
+}
