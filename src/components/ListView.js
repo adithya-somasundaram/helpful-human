@@ -12,10 +12,6 @@ class ListView extends Component{
             current : 0,
             pages : [],
             color_objs: [[]],
-            test : {
-                position : 'absolute',
-                paddingLeft : '30%'
-            }
         }
     }
 
@@ -44,7 +40,7 @@ class ListView extends Component{
 
     render(){
         return(
-            <div className="test">
+            <div className="page">
                 <div>
                     Welcome
                 </div>

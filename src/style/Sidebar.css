@@ -1,7 +1,21 @@
-
 .bar {
     height: 100%;
     width: 30%;
     background-color: #a2a6a7;
     position: fixed;
+}
+
+.rand-button {
+    width : 70%;
+    margin-left : 15%;
+    margin-top : 30px;
+    font-size : 20px;
+}
+
+.color-link {
+    margin-left : 10px;
+    display: block;
+    color: white;
+    text-decoration : none;
+    font-size : 20px;
 }
