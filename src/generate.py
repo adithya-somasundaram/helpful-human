@@ -1,8 +1,15 @@
 import json
 
 res = []
+colors = []
 
-colors = ["#c14441", "#c1bf41", "#c14441", "#c14441", "#c14441", "#c14441", "#c14441", "#c14441", "#c14441", "#c14441", "#c14441", "#c14441", "#c14441"]
+root = 123366
+offset = 2235
+
+for i in range(100):
+    colors.append('#' + str(hex(root))[2:] + "0")
+    root += offset
+
 page = 1
 page_size = 12
 temp = []

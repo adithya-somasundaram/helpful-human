@@ -21,7 +21,8 @@ class ListView extends Component {
         var temp = []
         var temp2 = []
         colors.data.map((block) => {
-            if (block.id === 1) {
+            console.log(block.id)
+            if (block.id === '1') {
                 temp.push(<button id={block.id} className="bottom-selected" onClick={() => {
                     document.getElementById(block.id).style.fontWeight = 'bold'
                     document.getElementById(this.state.prev).style.fontWeight = 'normal'
