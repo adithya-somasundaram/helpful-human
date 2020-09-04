@@ -42,29 +42,29 @@ class Sidebar extends Component {
                 <br />
                 <br />
                 {/* Below not functional yet */}
-                <Link className="color-link">
+                <label className="color-link">
                     Red
-                </Link>
+                </label>
                 <br />
-                <Link className="color-link">
+                <label className="color-link">
                     Orange
-                </Link>
+                </label>
                 <br />
-                <Link className="color-link">
+                <label className="color-link">
                     Yellow
-                </Link>
+                </label>
                 <br />
-                <Link className="color-link">
+                <label className="color-link">
                     Green
-                </Link>
+                </label>
                 <br />
-                <Link className="color-link">
+                <label className="color-link">
                     Blue
-                </Link>
+                </label>
                 <br />
-                <Link className="color-link">
+                <label className="color-link">
                     Purple
-                </Link>
+                </label>
             </div>
         );
     }
