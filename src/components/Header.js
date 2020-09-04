@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import * as colors from '../db.json'
+// import * as colors from '../db.json'
 
+// import local style
 import '../style/Header.css'
 
+// import logo image
 import Logo from '../logo-symbol.svg'
 
 class Header extends Component {
     constructor() {
         super()
 
+        // stored value from search bar
         this.state = {
             search_val: ""
         }
@@ -28,6 +31,7 @@ class Header extends Component {
                             })
 
                         }} />
+                        {/* template code for search button */}
                         {/* <Link to={{ pathname: "/detail-view", state: { color: this.state.search_val } }}>
                             <button className="go-button">Go!</button>
                         </Link> */}

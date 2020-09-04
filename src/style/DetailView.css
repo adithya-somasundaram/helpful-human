@@ -1,9 +1,11 @@
+/* size for selected color button */
 .current-button {
     width: 55vw;
     height: 40vw;
     margin-top : 3%;
 }
 
+/* style for 'clear' button at bottom of screen */
 .clear-button {
     width: 150px;
     height : 50px;
@@ -14,12 +16,14 @@
     font-weight : bold;
 }
 
+/* center div */
 .centered {
     position: relative;
     display: flex;
     justify-content : center;
 }
 
+/* style for label on selected color button */
 .current-label{
     background-color : white;
     position : absolute;

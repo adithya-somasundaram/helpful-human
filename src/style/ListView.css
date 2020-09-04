@@ -1,8 +1,10 @@
+/* page offset from sidebar */
 .page {
     position : absolute;
     margin-left: 30%;
 }
 
+/* style for on screen color buttons */
 .color-button {
     width: 15vw;
     height: 15vw;
@@ -10,35 +12,7 @@
     margin-top : 3%;
 }
 
-.page-button {
-    outline: none;
-}
-
-.bottom-bar {
-    bottom: -75px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-.bottom-button {
-    outline: none;
-    border: none;
-    background-color : white;
-    font-size : 25px;
-    font-weight : normal;
-    text-decoration : none;
-}
-
-.bottom-selected {
-    outline: none;
-    border: none;
-    background-color : white;
-    font-size : 25px;
-    font-weight : bold;
-    text-decoration : underline;
-}
-
+/* style for labels on color buttons */
 .label-style {
     background-color : white;
     position : absolute;
@@ -52,4 +26,32 @@
     border-radius : 0 0 4px 4px;
     font-size: 2vw;
     text-align: left; 
+}
+
+/* style for page numbers div on bottom of page */
+.bottom-bar {
+    bottom: -75px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* style for page numbers on bottom of page */
+.bottom-button {
+    outline: none;
+    border: none;
+    background-color : white;
+    font-size : 25px;
+    font-weight : normal;
+    text-decoration : none;
+}
+
+/* style for selected page number */
+.bottom-selected {
+    outline: none;
+    border: none;
+    background-color : white;
+    font-size : 25px;
+    font-weight : bold;
+    text-decoration : underline;
 }

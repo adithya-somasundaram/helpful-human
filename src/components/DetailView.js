@@ -1,20 +1,22 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
+// import local style
 import '../style/DetailView.css'
 
 function DetailView(props) {
-    console.log(props)
 
+    // local style to offset the page from sidebar
     const page = {
         marginLeft: "32%"
     }
 
+    // local style for inputted color
     const cur = {
         backgroundColor : props.location.state.color,
         position : 'relative',
         borderRadius : '8px',
-        borderColor : 'white',
+        borderColor : 'gray',
         boxShadow: '0 5px 10px 1px rgba(0,0,0,0.2)'
     }
 

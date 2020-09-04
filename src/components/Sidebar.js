@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+
+// import data from db
 import * as colors from '../db.json'
 
+// import local style
 import '../style/Sidebar.css'
 
 class Sidebar extends Component {
-
     constructor(props){
         super(props)
 
+        // rand will hold random color
         this.state = {
             rand : ""
         }
@@ -20,7 +23,10 @@ class Sidebar extends Component {
     }
 
     generateRand(){
+        // choose random block of colors
         var block = Math.floor(Math.random() * colors.data.length)
+
+        // choose random color and set
         var col = Math.floor(Math.random() * colors.data[block].colors.length)
         this.setState({
             rand : colors.data[block].colors[col]
@@ -35,6 +41,7 @@ class Sidebar extends Component {
                 </Link>
                 <br />
                 <br />
+                {/* Below not functional yet */}
                 <Link className="color-link">
                     Red
                 </Link>

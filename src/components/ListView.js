@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+
+// import db for colors
 import * as colors from '../db.json'
 
+// import local style
 import '../style/ListView.css'
 
 class ListView extends Component {
@@ -9,26 +12,29 @@ class ListView extends Component {
         super(props)
 
         this.state = {
-            total: 0,
-            current: 0,
-            pages: [],
-            color_objs: [[]],
-            prev: 1,
+            current: 0,         // current color obj on screen
+            pages: [],          // holds page numbers at bottom of sceen
+            color_objs: [[]],   // holds color buttons
+            prev: 1,            // stores previous first page
         }
     }
 
     componentDidMount() {
-        var temp = []
-        var temp2 = []
+        var nums = []               // will hold page numbers
+        var color_buttons = []      // will hold color buttons
+
+        // run through data
         colors.data.map((block) => {
-            console.log(block.id)
+            // set first page number to bold and underlined
             if (block.id === '1') {
-                temp.push(<button id={block.id} className="bottom-selected" onClick={() => {
+                nums.push(<button id={block.id} className="bottom-selected" onClick={() => {
+                    // onClick set text to bold and underlined, reset prev
                     document.getElementById(block.id).style.fontWeight = 'bold'
                     document.getElementById(this.state.prev).style.fontWeight = 'normal'
                     document.getElementById(block.id).style.textDecoration = 'underline'
                     document.getElementById(this.state.prev).style.textDecoration = 'none'
 
+                    // set current and prev
                     this.setState({
                         current: block.id - 1,
                         prev: block.id
@@ -36,12 +42,15 @@ class ListView extends Component {
                 }
                 }>{block.id}</button>)
             } else {
-                temp.push(<button id={block.id} className="bottom-button" onClick={() => {
+                // normal page number
+                nums.push(<button id={block.id} className="bottom-button" onClick={() => {
+                    // onClick set text to bold and underlined, reset prev
                     document.getElementById(block.id).style.fontWeight = 'bold'
                     document.getElementById(this.state.prev).style.fontWeight = 'normal'
                     document.getElementById(block.id).style.textDecoration = 'underline'
                     document.getElementById(this.state.prev).style.textDecoration = 'none'
 
+                    // set current and prev
                     this.setState({
                         current: block.id - 1,
                         prev: block.id
@@ -50,8 +59,9 @@ class ListView extends Component {
                 }>{block.id}</button>)
             }
 
-            var temp3 = []
+            var temp = []       // temp holds colors for 1 page
             block.colors.map((current) => {
+                // style for individual button
                 var cur = {
                     backgroundColor: current,
                     position: 'relative',
@@ -59,19 +69,26 @@ class ListView extends Component {
                     borderColor: 'white',
                     boxShadow: '0 5px 10px 1px rgba(0,0,0,0.2)'
                 }
-                temp3.push(<Link to={{ pathname: "/detail-view", state: { color: current, prev: this.state.current } }}>
+
+                // add path to detail view
+                temp.push(<Link to={{ pathname: "/detail-view", state: { color: current, prev: this.state.current } }}>
                     <button style={cur} className="color-button">
                         <span className="label-style">{current}</span>
 
                     </button>
                 </Link>)
+                return 1;
             })
-            temp2.push(temp3)
+
+            // push page into color buttons
+            color_buttons.push(temp)
+            return 1;
         })
 
+        // set page numbers and colors array
         this.setState({
-            pages: temp,
-            color_objs: temp2
+            pages: nums,
+            color_objs: color_buttons
         })
     }
 

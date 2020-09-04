@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-// import logo from './logo.svg';
+// local style
 import './App.css';
 
-
+// import components
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import ListView from './components/ListView'
