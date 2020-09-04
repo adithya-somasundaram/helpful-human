@@ -20,3 +20,33 @@
     display: flex;
     justify-content: center;
 }
+
+.bottom-button {
+    outline: none;
+    border: none;
+    background-color : white;
+    font-size : 25px;
+    font-weight : normal;
+    text-decoration : none;
+}
+
+.bottom-selected {
+    outline: none;
+    border: none;
+    background-color : white;
+    font-size : 25px;
+    font-weight : bold;
+    text-decoration : underline;
+}
+
+.label-style {
+    background-color : white;
+    position : absolute;
+    width : 15vw;
+    height : 2.3vw;
+    margin-top : 5vw;
+    margin-left : -7.32vw;
+    max-width : 100%;
+    max-height : 20%;
+    border-radius : 0 0 4px 4px;
+}

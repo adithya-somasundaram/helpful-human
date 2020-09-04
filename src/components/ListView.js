@@ -13,59 +13,60 @@ class ListView extends Component {
             current: 0,
             pages: [],
             color_objs: [[]],
-            prev : 1,
-            test: {
-                outline:'none',
-                border:'none',
-                backgroundColor : 'white',
-                fontSize : '25px',
-                fontWeight : 'normal',
-                textDecoration : 'none'
-            }
+            prev: 1,
         }
     }
 
     componentDidMount() {
+        if (this.props.location.state !== undefined) {
+            console.log(this.props.location.state.test)
+        }
+
+
         var temp = []
         var temp2 = []
         colors.data.map((block) => {
-            temp.push(<button id={block.id} style={this.state.test} onClick={() => {
-                document.getElementById(block.id).style.fontWeight = 'bold'
-                document.getElementById(this.state.prev).style.fontWeight = 'normal'
-                document.getElementById(block.id).style.textDecoration = 'underline'
-                document.getElementById(this.state.prev).style.textDecoration = 'none'
+            if (block.id == 1) {
+                temp.push(<button id={block.id} className="bottom-selected" onClick={() => {
+                    document.getElementById(block.id).style.fontWeight = 'bold'
+                    document.getElementById(this.state.prev).style.fontWeight = 'normal'
+                    document.getElementById(block.id).style.textDecoration = 'underline'
+                    document.getElementById(this.state.prev).style.textDecoration = 'none'
 
-                this.setState({
-                    current: block.id - 1,
-                    prev : block.id
-                })
+                    this.setState({
+                        current: block.id - 1,
+                        prev: block.id
+                    })
+                }
+                }>{block.id}</button>)
+            } else {
+                temp.push(<button id={block.id} className="bottom-button" onClick={() => {
+                    document.getElementById(block.id).style.fontWeight = 'bold'
+                    document.getElementById(this.state.prev).style.fontWeight = 'normal'
+                    document.getElementById(block.id).style.textDecoration = 'underline'
+                    document.getElementById(this.state.prev).style.textDecoration = 'none'
+
+                    this.setState({
+                        current: block.id - 1,
+                        prev: block.id
+                    })
+                }
+                }>{block.id}</button>)
             }
-            }>{block.id}</button>)
+
             var temp3 = []
             block.colors.map((current) => {
                 var cur = {
-                    backgroundColor : current,
-                    // border : 'none',
-                    position : 'relative',
-                    borderRadius : '8px',
-                    borderColor : 'white',
+                    backgroundColor: current,
+                    position: 'relative',
+                    borderRadius: '8px',
+                    borderColor: 'white',
                     boxShadow: '0 5px 10px 1px rgba(0,0,0,0.2)'
                 }
-                var t = {
-                    backgroundColor : 'white',
-                    position : 'absolute',
-                    width : '15vw',
-                    height : '2.3vw',
-                    marginTop : '5vw',
-                    marginLeft : '-7.32vw',
-                    maxWidth : '100%',
-                    maxHeight : '20%',
-                    borderRadius : '0 0 4px 4px'
-                }
-                temp3.push(<Link to={{ pathname: "/detail-view", state:{color:current} }}>
+                temp3.push(<Link to={{ pathname: "/detail-view", state: { color: current, prev: this.state.current } }}>
                     <button style={cur} className="color-button">
-                        <span style={t}>{current}</span>
-                        
+                        <span className="label-style">{current}</span>
+
                     </button>
                 </Link>)
             })

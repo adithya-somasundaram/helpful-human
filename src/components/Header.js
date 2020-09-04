@@ -6,10 +6,6 @@ import '../style/Header.css'
 import Logo from '../logo-symbol.svg'
 
 function Header() {
-    const input_style = {
-        paddingLeft : '50px'
-    }
-
     return (
         <nav className="header-out">
             <ul className="header-in">
@@ -17,7 +13,7 @@ function Header() {
                     <img src={Logo} alt="logo"/>
                 </Link>
                 <div className="right">
-                    <input style={input_style}/>
+                    <input className="input-style"/>
                 </div>
             </ul>
         </nav>

@@ -1,13 +1,38 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import * as colors from '../db.json'
 
 import '../style/Sidebar.css'
 
 class Sidebar extends Component {
+
+    constructor(props){
+        super(props)
+
+        this.state = {
+            rand : ""
+        }
+    }
+
+    componentDidMount(){
+        // generate random color for random color button
+        this.generateRand()
+    }
+
+    generateRand(){
+        var block = Math.floor(Math.random() * colors.data.length)
+        var col = Math.floor(Math.random() * colors.data[block].colors.length)
+        this.setState({
+            rand : colors.data[block].colors[col]
+        })
+    }
+
     render() {
         return (
             <div className="bar">
-                <button className="rand-button" onClick={() => { console.log('ok') }}>Random Color</button>
+                <Link to={{ pathname: "/detail-view", state:{color:this.state.rand} }} >
+                    <button className="rand-button" onClick={() => { this.generateRand() }}>Random Color</button>
+                </Link>
                 <br />
                 <br />
                 <Link className="color-link" to='/detail-view'>
