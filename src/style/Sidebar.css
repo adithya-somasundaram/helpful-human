@@ -4,6 +4,7 @@
     background-color: #a2a6a7;
     position: absolute;
     padding-top: 30px;
+    box-shadow: 0 5px 10px 1px rgba(0,0,0,0.4);
 }
 
 .rand-button {
@@ -14,9 +15,9 @@
 }
 
 .color-link {
-    margin-left : 10px;
+    margin-left : 20px;
     display: block;
-    color: white;
+    color: #33393a;
     text-decoration : none;
     font-size : 20px;
 }

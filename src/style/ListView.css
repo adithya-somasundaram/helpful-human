@@ -42,11 +42,14 @@
 .label-style {
     background-color : white;
     position : absolute;
-    width : 15vw;
+    padding: 1vw 6.6vw 1vw 1vw;
+    width: 7vw;
     height : 2.3vw;
-    margin-top : 5vw;
+    margin-top : 3vw;
     margin-left : -7.32vw;
     max-width : 100%;
     max-height : 20%;
     border-radius : 0 0 4px 4px;
+    font-size: 2vw;
+    text-align: left; 
 }

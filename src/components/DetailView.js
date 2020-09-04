@@ -7,7 +7,7 @@ function DetailView(props) {
     console.log(props)
 
     const page = {
-        marginLeft: "35%"
+        marginLeft: "32%"
     }
 
     const cur = {
