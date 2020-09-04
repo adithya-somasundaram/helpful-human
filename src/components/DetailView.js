@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 import '../style/DetailView.css'
 
@@ -28,13 +29,34 @@ function DetailView(props) {
         borderRadius : '0 0 4px 4px'
     }
 
+    const r = {
+        position: 'relative',
+        display: 'flex',
+        justifyContent: 'center'
+    }
+
+    const z = {
+        width: '150px',
+        height : '50px',
+        backgroundColor : 'white',
+        borderRadius:'8px'
+    }
+
     return (
         <div style={test}>
             <h1></h1>
-            <button style={cur} className="current-button">
-                <span style={t}>{props.location.state.color}</span>
-
-            </button>
+            <div style={r}>
+                <button style={cur} className="current-button">
+                    <span style={t}>{props.location.state.color}</span>
+                </button>
+            </div>
+            <br/>
+            <br/>
+            <div style={r}>
+                <Link to="/">
+                    <button style = {z}>Clear</button>
+                </Link>
+            </div>
         </div>
     )
 }
