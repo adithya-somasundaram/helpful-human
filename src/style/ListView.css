@@ -13,3 +13,10 @@
 .page-button {
     outline: none;
 }
+
+.bottom-bar {
+    bottom: -75px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}

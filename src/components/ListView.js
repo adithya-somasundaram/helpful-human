@@ -13,9 +13,14 @@ class ListView extends Component {
             current: 0,
             pages: [],
             color_objs: [[]],
+            prev : 1,
             test: {
                 outline:'none',
-                border:'none'
+                border:'none',
+                backgroundColor : 'white',
+                fontSize : '25px',
+                fontWeight : 'normal',
+                textDecoration : 'none'
             }
         }
     }
@@ -24,9 +29,15 @@ class ListView extends Component {
         var temp = []
         var temp2 = []
         colors.data.map((block) => {
-            temp.push(<button style={this.state.test} onClick={() => {
+            temp.push(<button id={block.id} style={this.state.test} onClick={() => {
+                document.getElementById(block.id).style.fontWeight = 'bold'
+                document.getElementById(this.state.prev).style.fontWeight = 'normal'
+                document.getElementById(block.id).style.textDecoration = 'underline'
+                document.getElementById(this.state.prev).style.textDecoration = 'none'
+
                 this.setState({
-                    current: block.id - 1
+                    current: block.id - 1,
+                    prev : block.id
                 })
             }
             }>{block.id}</button>)
@@ -35,15 +46,21 @@ class ListView extends Component {
                 var cur = {
                     backgroundColor : current,
                     // border : 'none',
-                    position : 'relative'
+                    position : 'relative',
+                    borderRadius : '8px',
+                    borderColor : 'white',
+                    boxShadow: '0 5px 10px 1px rgba(0,0,0,0.2)'
                 }
                 var t = {
                     backgroundColor : 'white',
                     position : 'absolute',
-                    width : '14.5vw',
+                    width : '15vw',
                     height : '2.3vw',
                     marginTop : '5vw',
-                    marginLeft : '-7.26vw'
+                    marginLeft : '-7.32vw',
+                    maxWidth : '100%',
+                    maxHeight : '20%',
+                    borderRadius : '0 0 4px 4px'
                 }
                 temp3.push(<Link to={{ pathname: "/detail-view", state:{color:current} }}>
                     <button style={cur} className="color-button">
@@ -54,6 +71,7 @@ class ListView extends Component {
             })
             temp2.push(temp3)
         })
+
         this.setState({
             pages: temp,
             color_objs: temp2
