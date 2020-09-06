@@ -17,7 +17,10 @@ var row_count = 12
 var index = 1
 
 // query the data from the db
-data.all(`SELECT * FROM colors`, [], (res)=>{
+data.all(`SELECT * FROM colors`, [], (err, res)=>{
+    if(err){
+        return console.error(err.message)
+    }
     for(let i = 0; i < res.length; i++){
         temp.push(res[i].name)
 
