@@ -4,7 +4,7 @@ let data = new sqlite3.Database('./src/colors.db', sqlite3.OPEN_READONLY, (err)=
     if(err){
         return console.error(err.message)
     }
-    console.log('yay')
+    console.log('connected')
 })
 
 var d = []
